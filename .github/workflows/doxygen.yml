@@ -21,10 +21,8 @@ jobs:
         publish_dir: ./docs
 
     # Build Doxygen documentation
-    # mattnotmitt/doxygen-action
     # https://github.com/marketplace/actions/doxygen-action
 
     # Deploy Doxygen documentation
-    # peaceiris/actions-gh-pages
     # https://github.com/peaceiris/actions-gh-pages
 
