@@ -1,0 +1,30 @@
+name: Build and deploy Doxygen documentation
+
+on:
+  push:
+    branches: main
+  
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Build doxy
+      uses: mattnotmitt/doxygen-action@v1.9.5
+
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./public
+
+    # Build Doxygen documentation
+    # mattnotmitt/doxygen-action
+    # https://github.com/marketplace/actions/doxygen-action
+
+    # Deploy Doxygen documentation
+    # peaceiris/actions-gh-pages
+    # https://github.com/peaceiris/actions-gh-pages
+
