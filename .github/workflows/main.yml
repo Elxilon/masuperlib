@@ -15,8 +15,14 @@ jobs:
       run: |
         sudo apt-get update 
         sudo apt-get install -yq cmake catch2
-
-    # Build project
-
-    # Run tests
-
+        
+    - name: build
+      run: |
+        mkdir build/
+        cd build/
+        cmake ..
+        make .
+    
+    - name: test
+      run: |
+        build/masuperlib-test
